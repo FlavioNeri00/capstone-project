@@ -1,0 +1,57 @@
+@font-face {
+  font-family: Nova;
+  src: url(./Fonts/Nexa-Rust/nexa-rust/NexaRustSlab-BlackShadow01.otf);
+}
+@import url("https://use.typekit.net/may0aqf.css");
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
+
+.title-myriad {
+  font-family: "myriad-pro", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2rem;
+}
+
+.parag-arpona {
+  font-family: "Playfair Display", serif;
+}
+
+a:hover {
+  transform: scale(1.1);
+}
+
+a {
+  display: inline-block;
+  transition: 1s;
+}
+
+.card-information {
+  transition: 1s;
+}
+
+.card-information:hover {
+  transform: scale(1.2);
+  z-index: 1;
+}
+
+.btn-hov {
+  display: inline-block;
+  transition: 1s;
+}
+
+.btn-hov:hover {
+  transform: scale(1.1);
+}
+
+.ingredients:hover {
+  cursor: pointer;
+}
+
+.no-hover:hover {
+  transform: rotate(15deg);
+}
+
+.no-hover {
+  transition: 1s;
+}
