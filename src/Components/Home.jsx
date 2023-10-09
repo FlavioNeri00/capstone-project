@@ -3,9 +3,9 @@ import Header from "./Header";
 
 const Home = () => {
   return (
-    <div>
-      <Header class="text-white hover" />
+    <div style={{}}>
       <Body />
+      <Header class="text-white hover" />
     </div>
   );
 };

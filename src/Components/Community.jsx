@@ -38,7 +38,7 @@ const Community = () => {
             </div>
             <div className="text-end mt-5">
               {" "}
-              <Link to="/cafe/category">
+              <Link to="/community/books">
                 <Button
                   className="p-3 rounded-0 border border-0 shadow-lg"
                   style={{ backgroundColor: "#48000C" }}

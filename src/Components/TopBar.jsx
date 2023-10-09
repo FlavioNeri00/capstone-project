@@ -27,8 +27,8 @@ const TopBar = () => {
   return (
     <div>
       <div
-        className="d-none  d-lg-flex justify-content-between"
-        style={{ backgroundColor: "#E9B02B" }}
+        className="d-none  d-lg-flex justify-content-between align-items-center"
+        style={{ backgroundColor: "#E9B02B", height: "139px" }}
       >
         <Link to="/">
           <img
@@ -44,8 +44,10 @@ const TopBar = () => {
           onClick={handleShow}
           className=" border border-0 fs-2 text-end me-3"
         >
-          <BsFillMenuButtonWideFill style={{ color: "#EA5045" }} />
-          <IoIosArrowDown style={{ color: "#EA5045" }} />
+          <BsFillMenuButtonWideFill
+            style={{ color: "#EA5045", fontSize: "40px" }}
+          />
+          <IoIosArrowDown style={{ color: "#EA5045", fontSize: "40px" }} />
         </Button>
 
         <Offcanvas

@@ -18,7 +18,8 @@ function App() {
       <BrowserRouter>
         <TopBar />
         <Routes>
-          <Route path="/" element={<MarketCalendar />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/market/calendar" element={<MarketCalendar />} />
           <Route path="/cafe" element={<Cafe />} />
           <Route path="/cafe/category" element={<CategoryMenu />} />
           <Route path="/:category" element={<Menu />} />

@@ -1,32 +1,32 @@
-import { Container } from "react-bootstrap";
+import { Carousel, Container } from "react-bootstrap";
+import photoCar1 from "../foto scaro/DSC00822.jpg";
+import photoCar2 from "../foto scaro/DSC00833.jpg";
+import photoCar3 from "../foto scaro/DSC00876.jpg";
+import photoCar4 from "../foto scaro/DSC00936.jpg";
 
 const Header = (props) => {
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "70vh",
-        backgroundImage: `url("https://images.unsplash.com/photo-1546622891-02c72c1537b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHVifGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60")`,
-        filter: "grayscale(80%)",
-      }}
-    >
-      <Container>
-        <h2 className="display-1 text-white pt-5">Benvenuti allo Scaro Project</h2>
-        <h3 className="display-3 text-white">
-          Un posto per{" "}
-          <a href="a" className={props.class}>
-            mangiare
-          </a>
-          /
-          <a href="a" className={props.class}>
-            studiare
-          </a>
-          /
-          <a href="a" className={props.class}>
-            divertirsi
-          </a>{" "}
-        </h3>
-      </Container>
+    <div className="mb-5">
+      {/* <Container className="d-flex justify-content-center"> */}
+      <Carousel className="mt-4 w-md-25 w-50" id="carousel">
+        <Carousel.Item interval={2000}>
+          <img src={photoCar1} alt="" style={{ width: "100%" }} />
+          <Carousel.Caption className="d-flex align-items-start"></Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item interval={2000}>
+          <img src={photoCar2} alt="" style={{ width: "100%" }} />
+          <Carousel.Caption></Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item interval={2000}>
+          <img src={photoCar3} alt="" style={{ width: "100%" }} />
+          <Carousel.Caption></Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item interval={2000}>
+          <img src={photoCar4} alt="" style={{ width: "100%" }} />
+          <Carousel.Caption></Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
+      {/* </Container> */}
     </div>
   );
 };
