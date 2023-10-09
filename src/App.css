@@ -86,7 +86,7 @@ a {
   }
 }
 
-@media screen and (min-width: 992px) {
+/* @media screen and (min-width: 992px) {
   .body-home {
     padding-inline-start: 229px;
   }
@@ -102,4 +102,4 @@ a {
   .body-home {
     padding-inline-start: 177px;
   }
-}
+} */
