@@ -49,7 +49,7 @@ const Market = () => {
                   style={{ backgroundColor: "#D0C6BD" }}
                 >
                   <span className="fs-5" style={{ color: "#164194" }}>
-                    Consulta i nostri libri
+                    Guarda i nostri eventi
                   </span>
                 </Button>
               </Link>

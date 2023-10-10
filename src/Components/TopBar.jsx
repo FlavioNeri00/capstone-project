@@ -42,13 +42,16 @@ const TopBar = () => {
         </div>
 
         <div className="d-flex">
-          <Link to="/" className="nav-link link-underline-cafe me-5">
+          <Link to="/cafe" className="nav-link link-underline-cafe me-5">
             <h3>Cafè </h3>
           </Link>
-          <Link to="/" className="nav-link link-underline-community me-5">
+          <Link
+            to="/community"
+            className="nav-link link-underline-community me-5"
+          >
             <h3>Community </h3>
           </Link>
-          <Link to="/" className="nav-link link-underline-market me-5">
+          <Link to="/market" className="nav-link link-underline-market me-5">
             <h3>Market </h3>
           </Link>
           <Link to="/" className="nav-link link-underline me-5">

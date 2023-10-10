@@ -21,7 +21,7 @@ const Cafe = () => {
           <div>
             <div
               className="d-flex flex-column justify-content-center px-2 shadow-lg"
-              style={{ backgroundColor: "#031635" }}
+              style={{ backgroundColor: "#164194" }}
             >
               <h2
                 className="display-1 fw-bold mt-0 py-0"

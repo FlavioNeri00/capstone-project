@@ -27,7 +27,7 @@ const Community = () => {
                 className="display-1 fw-bold mt-0 py-0"
                 style={{ color: "#F4E7DB" }}
               >
-                Benvenuti allo Scaro Cafè
+                Benvenuti allo Scaro Community
               </h2>
             </div>
             <div
