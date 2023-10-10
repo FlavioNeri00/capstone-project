@@ -47,8 +47,20 @@ const MarketCalendar = () => {
   return (
     <div className="px-1 mt-3">
       <h1>Calendar</h1>
+      <Calendar
+        localizer={localizer}
+        events={allEvents}
+        startAccessor="start"
+        endAccessor="end"
+        style={{
+          backgroundColor: "white",
+
+          height: "700px",
+          borderRadius: "5px",
+        }}
+      />
       <h2>Add New Event</h2>
-      <div className="mb-5">
+      <div style={{ marginBottom: "15rem" }}>
         <input
           required
           type="text"
@@ -75,18 +87,6 @@ const MarketCalendar = () => {
           Aggiungi evento
         </Button>
       </div>
-      <Calendar
-        localizer={localizer}
-        events={allEvents}
-        startAccessor="start"
-        endAccessor="end"
-        style={{
-          backgroundColor: "white",
-
-          height: "700px",
-          borderRadius: "5px",
-        }}
-      />
       ;
     </div>
   );
