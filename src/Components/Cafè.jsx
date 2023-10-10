@@ -25,6 +25,7 @@ const Cafe = () => {
             >
               <h2
                 className="display-1 fw-bold mt-0 py-0"
+                id="h2"
                 style={{ color: "#F4E7DB" }}
               >
                 Benvenuti allo Scaro Cafè

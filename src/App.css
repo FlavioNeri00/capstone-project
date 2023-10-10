@@ -58,7 +58,7 @@ body {
 #carousel {
   animation: forwards;
   animation-name: slidein;
-  animation-duration: 4s;
+  animation-duration: 2.5s;
 }
 
 @keyframes slidein {
@@ -73,7 +73,7 @@ body {
 #title-home {
   animation: forwards;
   animation-name: title-slide;
-  animation-duration: 3s;
+  animation-duration: 2s;
 }
 
 @keyframes title-slide {
