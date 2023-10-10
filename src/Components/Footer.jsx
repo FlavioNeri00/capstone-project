@@ -4,7 +4,7 @@ import sbem from "../vettoriale_sbem_page-0003-removebg.png";
 import ttt from "../photo1696362773__2_-removebg-preview.png";
 const Footer = () => {
   return (
-    <div style={{ backgroundColor: "#294995" }} className="pb-3 pt-2">
+    <div style={{ backgroundColor: "#F2B708" }} className="pb-3 pt-4 shadow-lg">
       <Container>
         <div className="d-flex justify-content-between">
           <span className="text-white" style={{ fontSize: "13px" }}>
@@ -12,8 +12,8 @@ const Footer = () => {
             &copy;Scaro{" "}
           </span>
           <div className="text-white">
-            <BsFacebook className="fs-4 me-3" />
-            <BsInstagram className="fs-4" />
+            <BsFacebook className="fs-4 me-3" color="#3b5998" />
+            <BsInstagram className="fs-4" color="#D62976" />
           </div>
         </div>
         <div className="d-flex flex-column justify-content-between">

@@ -11,15 +11,20 @@ import CategoryMenu from "./Components/CategoryMenu";
 import Community from "./Components/Community";
 import BookList from "./Components/BookList";
 import MarketCalendar from "./Components/MarketCalendar";
+import Market from "./Components/Market";
+import MarketCalendar2 from "./Components/MarketCalendar2";
+import { genereateDate } from "./util/calendar";
 
 function App() {
+  console.log(genereateDate());
   return (
     <div className="App">
       <BrowserRouter>
         <TopBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/market/calendar" element={<MarketCalendar />} />
+          <Route path="/market" element={<Market />} />
+          <Route path="/market/calendar" element={<MarketCalendar2 />} />
           <Route path="/cafe" element={<Cafe />} />
           <Route path="/cafe/category" element={<CategoryMenu />} />
           <Route path="/:category" element={<Menu />} />

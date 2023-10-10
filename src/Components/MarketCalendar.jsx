@@ -6,6 +6,7 @@ import parse from "date-fns/parse";
 import startOfWeek from "date-fns/startOfWeek";
 import getDay from "date-fns/getDay";
 import DatePicker from "react-datepicker";
+import { Container } from "react-bootstrap";
 
 const locales = {
   "en-US": require("date-fns/locale/en-US"),
@@ -23,26 +24,30 @@ const events = [
   {
     title: "Big Meeting",
     allDay: true,
-    start: new Date(2023, 10, 5),
-    end: new Date(2023, 10, 5),
+    start: new Date(2023, 11, 5),
+    end: new Date(2023, 11, 5),
   },
   {
     title: "Vacation",
     allDay: true,
-    start: new Date(5 / 10 / 2023),
-    end: new Date(5 / 10 / 2023),
+    start: new Date(2023, 11, 5),
+    end: new Date(2023, 11, 8),
   },
 ];
 
 const MarketCalendar = () => {
   return (
-    <div>
+    <div className="px-1">
       <Calendar
         localizer={localizer}
         events={events}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: 500, margin: "50px" }}
+        style={{
+          backgroundColor: "white",
+          height: "700px",
+          borderRadius: "5px",
+        }}
       />
       ;
     </div>

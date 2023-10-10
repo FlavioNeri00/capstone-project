@@ -11,7 +11,7 @@ const SingleBook = (props) => {
   return (
     <div>
       <Card
-        className="m-3"
+        className="m-3 border border-0"
         style={{
           maxWidth: "20rem",
           height: "20rem",

@@ -1,5 +1,6 @@
 import { Container, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import commPhoto from "../DSC00978.jpg";
 
 const Community = () => {
   return (
@@ -7,10 +8,10 @@ const Community = () => {
       <div
         className="p-5"
         style={{
-          backgroundImage: `url(https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3R1ZHlpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60)`,
-
+          backgroundImage: `url(${commPhoto})`,
+          backgroundPosition: "center 31%",
+          backgroundSize: "100%",
           overflow: "hidden",
-          width: "100%",
           height: "85vh",
         }}
       >
@@ -19,16 +20,21 @@ const Community = () => {
           {" "}
           <div>
             <div
-              className="d-flex flex-column justify-content-center px-2"
-              style={{ backdropFilter: "blur(12px)" }}
+              className="display-1 fw-bold mt-0 py-0"
+              style={{ backgroundColor: "#EA5045" }}
             >
               <h2
                 className="display-1 fw-bold mt-0 py-0"
-                style={{ color: "#EA5045" }}
+                style={{ color: "#F4E7DB" }}
               >
                 Benvenuti allo Scaro Cafè
               </h2>
-              <h3 className="fs-1 lh-1 " style={{ color: "#F38985" }}>
+            </div>
+            <div
+              className="mt-3 shadow-lg p-2 "
+              style={{ backgroundColor: "#F4E7DB" }}
+            >
+              <h3 className="fs-2 lh-1 text-start" style={{ color: "#B03330" }}>
                 Scaro Community è il cuore pulsante di Scaro Project. È Il luogo
                 in cui progettare la città che verrà. Il primo spazio
                 autogestito dagli studenti delle scuole superiori, università ed
@@ -40,10 +46,12 @@ const Community = () => {
               {" "}
               <Link to="/community/books">
                 <Button
-                  className="p-3 rounded-0 border border-0 shadow-lg"
+                  className="p-4 rounded-0 border border-0 shadow-lg"
                   style={{ backgroundColor: "#48000C" }}
                 >
-                  Consulta i nostri libri
+                  <span className="fs-5" style={{ color: "#F4E7DB" }}>
+                    Consulta i nostri libri
+                  </span>
                 </Button>
               </Link>
             </div>
