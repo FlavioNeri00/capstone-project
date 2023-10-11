@@ -20,11 +20,11 @@ const Community = () => {
           {" "}
           <div>
             <div
-              className="display-1 fw-bold mt-0 py-0"
+              className="display-1 mt-0 py-0"
               style={{ backgroundColor: "#EA5045" }}
             >
               <h2
-                className="display-1 fw-bold mt-0 py-0"
+                className="display-1 mt-0 py-0 font-fraunces"
                 style={{ color: "#F4E7DB" }}
               >
                 Benvenuti allo Scaro Community
@@ -34,7 +34,10 @@ const Community = () => {
               className="mt-3 shadow-lg p-2 "
               style={{ backgroundColor: "#F4E7DB" }}
             >
-              <h3 className="fs-2 lh-1 text-start" style={{ color: "#B03330" }}>
+              <h3
+                className="fs-2 lh-1 text-start font-lato"
+                style={{ color: "#B03330" }}
+              >
                 Scaro Community è il cuore pulsante di Scaro Project. È Il luogo
                 in cui progettare la città che verrà. Il primo spazio
                 autogestito dagli studenti delle scuole superiori, università ed
@@ -49,7 +52,7 @@ const Community = () => {
                   className="p-4 rounded-0 border border-0 shadow-lg"
                   style={{ backgroundColor: "#48000C" }}
                 >
-                  <span className="fs-5" style={{ color: "#F4E7DB" }}>
+                  <span className="fs-5 font-lato" style={{ color: "#F4E7DB" }}>
                     Consulta i nostri libri
                   </span>
                 </Button>

@@ -3,13 +3,22 @@ import photoCar1 from "../foto scaro/DSC00822.jpg";
 import photoCar2 from "../foto scaro/DSC00833.jpg";
 import photoCar3 from "../foto scaro/DSC00876.jpg";
 import photoCar4 from "../foto scaro/DSC00936.jpg";
-import scarosVideo from "../Video per sito Scaro1.mp4";
+import scarosVideo from "../Video per sito Scaro2.mp4";
 
-const Header = (props) => {
+const Header = () => {
   return (
-    <div className="mb-5 mt-3">
-      <video controls autoPlay id="carousel" width={"80%"}>
-        <source src={scarosVideo} type="video/mp4" />
+    <div
+      className="text-center pb-5"
+      style={{ backgroundColor: "#164194", height: "100%" }}
+    >
+      <video
+        id="background-video"
+        loop
+        muted
+        autoPlay
+        style={{ width: "100%" }}
+      >
+        <source id="yo" src={scarosVideo} />
       </video>
     </div>
   );

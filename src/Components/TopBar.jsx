@@ -16,7 +16,7 @@ import { BiFoodMenu } from "react-icons/bi";
 import { BsFillMenuButtonWideFill } from "react-icons/bs";
 import { IoIosArrowDown } from "react-icons/io";
 import { Link } from "react-router-dom";
-import logo from "../LOGO_SCARO_COLOR-1-removebg-preview.png";
+import logo from "../LOGO_SCARO_COLOR-1-removebg-preview_79023991bcaf938605b9.webp";
 
 const TopBar = () => {
   const [show, setShow] = useState(false);
@@ -27,8 +27,8 @@ const TopBar = () => {
   return (
     <div>
       <div
-        className="d-none  d-lg-flex justify-content-start align-items-center shadow-lg"
-        style={{ backgroundColor: "#F2B708", height: "139px" }}
+        className="d-none  d-lg-flex justify-content-between align-items-center shadow-lg font-futura"
+        style={{ backgroundColor: "#F2B708", height: "200px" }}
       >
         <div>
           <Link to="/">
@@ -36,30 +36,36 @@ const TopBar = () => {
               src={logo}
               alt=""
               className="img-fluid ms-3 no-hover"
-              style={{ maxWidth: "50%" }}
+              style={{ maxWidth: "90%" }}
             />
           </Link>
         </div>
 
         <div className="d-flex">
           <Link to="/cafe" className="nav-link link-underline-cafe me-5">
-            <h3>Cafè </h3>
+            <h3 className="fs-4" style={{ color: "#221F7B" }}>
+              CAFE{" "}
+            </h3>
           </Link>
           <Link
             to="/community"
             className="nav-link link-underline-community me-5"
           >
-            <h3>Community </h3>
+            <h3 className="fs-4" style={{ color: "#221F7B" }}>
+              COMMUNITY{" "}
+            </h3>
           </Link>
           <Link to="/market" className="nav-link link-underline-market me-5">
-            <h3>Market </h3>
+            <h3 className="fs-4" style={{ color: "#221F7B" }}>
+              MARKET{" "}
+            </h3>
           </Link>
-          <Link to="/" className="nav-link link-underline me-5">
+          {/* <Link to="/" className="nav-link link-underline me-5">
             <h3>Chi siamo </h3>
           </Link>
-          <Link to="/" className="nav-link link-underline">
+          <Link to="/" className="nav-link link-underline me-5">
             <h3>Dove puoi trovarci </h3>
-          </Link>
+          </Link> */}
         </div>
 
         {/* <Button
