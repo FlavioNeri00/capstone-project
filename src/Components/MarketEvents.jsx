@@ -14,6 +14,12 @@ const MarketEvents = () => {
       style={{ color: "#F4E7DB" }}
     >
       <Container>
+        <h2
+          className="display-1 font-fraunces text-center mb-4 mt-3"
+          style={{ color: "#164194" }}
+        >
+          I nostri eventi
+        </h2>
         <h2 className="font-fraunces mt-3">I nostri appuntamenti fissi:</h2>
         <div className="mt-3 mb-3 d-flex justify-content-start flex-wrap">
           <img
