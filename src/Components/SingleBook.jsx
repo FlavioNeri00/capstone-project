@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Badge, Button, Card, Container, Modal } from "react-bootstrap";
-import { GoDot } from "react-icons/go";
+import { Badge, Card, Container, Modal } from "react-bootstrap";
 
 const SingleBook = (props) => {
   const [show, setShow] = useState(false);

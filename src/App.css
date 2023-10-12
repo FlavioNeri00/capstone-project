@@ -159,6 +159,7 @@ body {
   width: 30%;
   margin-right: 20px;
   margin-bottom: 20px;
+  position: relative;
 }
 .img-hover:hover {
   transform: scale(1.1);

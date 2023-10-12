@@ -1,4 +1,4 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { BsFacebook, BsInstagram } from "react-icons/bs";
 import sbem from "../vettoriale_sbem_page-0003-removebg.png";
 import ttt from "../photo1696362773__2_-removebg-preview.png";

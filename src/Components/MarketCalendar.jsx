@@ -6,7 +6,7 @@ import parse from "date-fns/parse";
 import startOfWeek from "date-fns/startOfWeek";
 import getDay from "date-fns/getDay";
 import DatePicker from "react-datepicker";
-import { Button, Container } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import "react-datepicker/dist/react-datepicker.css";
 
 const locales = {

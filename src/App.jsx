@@ -10,7 +10,7 @@ import Menu from "./Components/Menù";
 import CategoryMenu from "./Components/CategoryMenu";
 import Community from "./Components/Community";
 import BookList from "./Components/BookList";
-import MarketCalendar from "./Components/MarketCalendar";
+
 import Market from "./Components/Market";
 import MarketEvents from "./Components/MarketEvents";
 

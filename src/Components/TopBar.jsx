@@ -1,20 +1,7 @@
 import { useState } from "react";
-import {
-  Button,
-  Col,
-  Offcanvas,
-  Row,
-  DropdownButton,
-  Dropdown,
-  Navbar,
-  Container,
-  Nav,
-  NavDropdown,
-} from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { AiOutlineMenu } from "react-icons/ai";
-import { BiFoodMenu } from "react-icons/bi";
-import { BsFillMenuButtonWideFill } from "react-icons/bs";
-import { IoIosArrowDown } from "react-icons/io";
+
 import { Link } from "react-router-dom";
 import logo from "../LOGO_SCARO_COLOR-1-removebg-preview_79023991bcaf938605b9.webp";
 

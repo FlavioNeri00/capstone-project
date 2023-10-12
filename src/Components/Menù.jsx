@@ -1,5 +1,5 @@
 import { Container } from "react-bootstrap";
-import CategoryMenu from "./CategoryMenu";
+
 import SingleMenu from "./SingleMenu";
 import { useState } from "react";
 

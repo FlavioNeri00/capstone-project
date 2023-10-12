@@ -1,4 +1,4 @@
-import { Button, Card, Col, Container, Modal, Row } from "react-bootstrap";
+import { Container, Modal } from "react-bootstrap";
 import mercoUni from "../mercoledi universitario scaro.jpg";
 import { useState } from "react";
 import eventSpac from "../evento speciale scaro.jpg";

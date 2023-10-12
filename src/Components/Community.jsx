@@ -22,7 +22,7 @@ const Community = () => {
           {" "}
           <div className="d-flex flex-column justify-content-center px-2 shadow-lg">
             <div
-              className="display-1  mt-0 py-1"
+              className="display-1 ps-1 mt-0 py-1"
               style={{ backgroundColor: "#EA5045" }}
             >
               <h2

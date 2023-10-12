@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Badge, Button, Card, Modal } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 const SingleMenu = (props) => {
   const [show, setShow] = useState(false);
@@ -37,12 +36,20 @@ const SingleMenu = (props) => {
                 </Button>
               )}
               <p className="m-0 ps-3 pt-2"> {props.counter}</p>{" "}
-              <Button className=" border border-0" style={{ backgroundColor: "transparent" }} onClick={props.plus}>
+              <Button
+                className=" border border-0"
+                style={{ backgroundColor: "transparent" }}
+                onClick={props.plus}
+              >
                 <p className="m-0 p-0 fs-2">+</p>
               </Button>
             </div>
 
-            <h6 className="ingredients" onClick={handleShow} style={{ textDecoration: "underline" }}>
+            <h6
+              className="ingredients"
+              onClick={handleShow}
+              style={{ textDecoration: "underline" }}
+            >
               Ingredienti
             </h6>
           </div>

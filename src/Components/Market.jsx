@@ -24,7 +24,7 @@ const Market = () => {
               style={{ backgroundColor: "#F4E7DB" }}
             >
               <h2
-                className="display-1 font-fraunces mt-0 py-0"
+                className="display-1 font-fraunces ps-1 mt-0 py-0"
                 style={{ color: "#164194" }}
               >
                 Benvenuti allo Scaro Market
