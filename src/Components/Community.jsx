@@ -6,21 +6,23 @@ const Community = () => {
   return (
     <div>
       <div
-        className="p-5"
+        className="p-5 img-fluid"
         style={{
           backgroundImage: `url(${commPhoto})`,
           backgroundPosition: "center 31%",
           backgroundSize: "100%",
           overflow: "hidden",
           height: "85vh",
+          backgroundOrigin: "border-box",
+          backgroundRepeat: "no-repeat",
         }}
       >
         {" "}
         <Container>
           {" "}
-          <div>
+          <div className="d-flex flex-column justify-content-center px-2 shadow-lg">
             <div
-              className="display-1 mt-0 py-0"
+              className="display-1  mt-0 py-1"
               style={{ backgroundColor: "#EA5045" }}
             >
               <h2

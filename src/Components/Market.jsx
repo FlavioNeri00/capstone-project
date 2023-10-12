@@ -20,7 +20,7 @@ const Market = () => {
           {" "}
           <div>
             <div
-              className="display-1  mt-0 py-0"
+              className="display-1  mt-0 py-1"
               style={{ backgroundColor: "#F4E7DB" }}
             >
               <h2

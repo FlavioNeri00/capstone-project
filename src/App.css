@@ -54,21 +54,6 @@ body {
   transition: 1s;
 }
 
-/* #carousel {
-  animation: forwards;
-  animation-name: slidein;
-  animation-duration: 2.5s;
-}
-
-@keyframes slidein {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(12.5%);
-  }
-} */
-
 #title-home {
   animation: forwards;
   animation-name: title-slide;
@@ -167,4 +152,22 @@ body {
 .link-underline-community:hover::after {
   transform: scale(1);
   transform-origin: bottom left;
+}
+
+.img-hover {
+  transition: 1s;
+  width: 30%;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.img-hover:hover {
+  transform: scale(1.1);
+
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .flex-events {
+    align-items: start;
+  }
 }

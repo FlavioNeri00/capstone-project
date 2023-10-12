@@ -12,6 +12,7 @@ import Community from "./Components/Community";
 import BookList from "./Components/BookList";
 import MarketCalendar from "./Components/MarketCalendar";
 import Market from "./Components/Market";
+import MarketEvents from "./Components/MarketEvents";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/market" element={<Market />} />
-          <Route path="/market/calendar" element={<MarketCalendar />} />
+          <Route path="/market/calendar" element={<MarketEvents />} />
           <Route path="/cafe" element={<Cafe />} />
           <Route path="/cafe/category" element={<CategoryMenu />} />
           <Route path="/:category" element={<Menu />} />
