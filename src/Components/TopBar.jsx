@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import { AiOutlineMenu } from "react-icons/ai";
 
 import { Link } from "react-router-dom";
-import logo from "../LOGO_SCARO_COLOR-1-removebg-preview_79023991bcaf938605b9.webp";
+import logo from "../assets/LOGO_SCARO_COLOR-1-removebg-preview_79023991bcaf938605b9.webp";
 
 const TopBar = () => {
   const [show, setShow] = useState(false);

@@ -1,6 +1,6 @@
 import { Container, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import commPhoto from "../DSC00978.jpg";
+import commPhoto from "../assets/DSC00978.jpg";
 
 const Community = () => {
   return (
@@ -10,11 +10,9 @@ const Community = () => {
         style={{
           backgroundImage: `url(${commPhoto})`,
           backgroundPosition: "center 31%",
-          backgroundSize: "100%",
+          backgroundSize: "cover",
           overflow: "hidden",
           height: "85vh",
-          backgroundOrigin: "border-box",
-          backgroundRepeat: "no-repeat",
         }}
       >
         {" "}

@@ -1,6 +1,6 @@
 import { Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import photoCafe from "../DSC01091.jpg";
+import photoCafe from "../assets/DSC01091.jpg";
 
 const Cafe = () => {
   return (
@@ -9,7 +9,7 @@ const Cafe = () => {
         className="p-5"
         style={{
           backgroundImage: `url(${photoCafe})`,
-          backgroundSize: "120rem",
+          backgroundSize: "cover",
           overflow: "hidden",
           width: "100%",
           height: "85vh",

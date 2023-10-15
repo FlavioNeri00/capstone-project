@@ -1,7 +1,7 @@
 import { Container } from "react-bootstrap";
 import { BsFacebook, BsInstagram } from "react-icons/bs";
-import sbem from "../vettoriale_sbem_page-0003-removebg.png";
-import ttt from "../photo1696362773__2_-removebg-preview.png";
+import sbem from "../assets/vettoriale_sbem_page-0003-removebg.png";
+import ttt from "../assets/photo1696362773__2_-removebg-preview.png";
 const Footer = () => {
   return (
     <div style={{ backgroundColor: "#F2B708" }} className="pb-3 pt-4 shadow-lg">

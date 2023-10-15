@@ -1,6 +1,6 @@
 import { Container, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import markPhoto from "../DSC00933.jpg";
+import markPhoto from "../assets/DSC00933.jpg";
 
 const Market = () => {
   return (
@@ -10,7 +10,7 @@ const Market = () => {
         style={{
           backgroundImage: `url(${markPhoto})`,
           backgroundPosition: "center 31%",
-          backgroundSize: "100%",
+          backgroundSize: "cover",
           overflow: "hidden",
           height: "85vh",
         }}

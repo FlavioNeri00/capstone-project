@@ -1,4 +1,4 @@
-import scarosVideo from "../SCARO (1).mp4";
+import scarosVideo from "../assets/SCARO (1).mp4";
 
 const Header = () => {
   return (
@@ -9,6 +9,7 @@ const Header = () => {
       <video
         id="background-video"
         loop
+        muted
         autoPlay
         controls
         style={{ width: "100%" }}
