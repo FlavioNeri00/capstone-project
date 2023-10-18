@@ -1,11 +1,12 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import menuReducer from "../reducers/menuReducer";
+
 import persistReducer from "redux-persist/es/persistReducer";
 import storage from "redux-persist/lib/storage";
 import persistStore from "redux-persist/es/persistStore";
+import counterReducer from "../reducers/counterReducer";
 
 const rootReducer = combineReducers({
-  menu: menuReducer,
+  counter: counterReducer,
 });
 
 const persistedReducer = persistReducer({ key: "root", storage }, rootReducer);

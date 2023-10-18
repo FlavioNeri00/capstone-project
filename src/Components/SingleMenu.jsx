@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { Badge, Button, Card, Modal } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { lessCounterAction, plusCounterAction } from "../Redux/action";
 
 const SingleMenu = (props) => {
   const [show, setShow] = useState(false);
-
+  const counterSelector = useSelector(state => state.counter.content)
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  const dispatch = useDispatch()
   return (
     <div>
       <Card
@@ -27,20 +28,20 @@ const SingleMenu = (props) => {
               style={{ paddingBlockStart: "8em" }}
             >
               {" "}
-              {props.counter > 0 && (
+              {counterSelector > 0 && (
                 <Button
                   className="m-0 p-0 border border-0"
                   style={{ backgroundColor: "transparent" }}
-                  onClick={props.less}
+                  onClick={() => dispatch(lessCounterAction(counterSelector)) }
                 >
                   <p className="p-0 m-0 p-0 fs-2">-</p>
                 </Button>
               )}
-              <p className="m-0 ps-3 pt-2"> {props.counter}</p>{" "}
+              <p className="m-0 ps-3 pt-2"> {counterSelector}</p>{" "}
               <Button
                 className=" border border-0"
                 style={{ backgroundColor: "transparent" }}
-                onClick={props.plus}
+                onClick={() => dispatch(plusCounterAction(counterSelector)) }
               >
                 <p className="m-0 p-0 fs-2">+</p>
               </Button>

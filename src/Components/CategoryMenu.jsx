@@ -1,9 +1,11 @@
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Cart from "./Cart";
 
 const CategoryMenu = () => {
   return (
     <div>
+      <Cart/>
       <Container className="my-5">
         <Row className="d-flex justify-content-center gx-5 gy-3">
           <Col xs={12} md={4} lg={3}>

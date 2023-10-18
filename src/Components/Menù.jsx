@@ -1,22 +1,16 @@
 import { Container } from "react-bootstrap";
 
 import SingleMenu from "./SingleMenu";
-import { useState } from "react";
+import Cart from "./Cart";
 
 const Menu = () => {
-  const [counter, setCounter] = useState(0);
-
-  const plusCounter = () => {
-    setCounter(counter + 1);
-  };
-
-  const lessCounter = () => {
-    setCounter(counter - 1);
-  };
   return (
     <div>
       <Container>
-        <SingleMenu counter={counter} plus={plusCounter} less={lessCounter} />
+        <div className="text-end">
+          <Cart />
+        </div>
+        <SingleMenu />
       </Container>
     </div>
   );
