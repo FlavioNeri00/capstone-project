@@ -11,6 +11,7 @@ const Body = () => {
         >
           Il social bar nel cuore di <br /> Ravanusella
         </h2>
+
         <h4
           className="text-start mb-5 font-lato"
           style={{ color: "#164194", lineHeight: "35px" }}
