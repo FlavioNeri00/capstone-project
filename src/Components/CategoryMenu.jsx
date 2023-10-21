@@ -1,8 +1,9 @@
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Cart from "./Cart";
 
 const CategoryMenu = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <Container className="my-5">
@@ -27,14 +28,15 @@ const CategoryMenu = () => {
                 >
                   <Card.Title>Bevande calde</Card.Title>
                   <Card.Text>Caffè, Tè, Cioccolata...</Card.Text>
-                  <Link to="/:category">
-                    <Button
-                      className="border border-0 rounded-0"
-                      style={{ backgroundColor: "#031635" }}
-                    >
-                      Vai al menù
-                    </Button>
-                  </Link>
+                  {/* <Link to="/:category"> */}
+                  <Button
+                    className="border border-0 rounded-0"
+                    style={{ backgroundColor: "#031635" }}
+                    onClick={() => navigate(`/Bevande calde`)}
+                  >
+                    Vai al menù
+                  </Button>
+                  {/* </Link> */}
                 </Card.Body>
               </Card>
             </Col>
@@ -53,14 +55,15 @@ const CategoryMenu = () => {
                 >
                   <Card.Title>Tavola calda</Card.Title>
                   <Card.Text>Pizza, Panini, Miscate...</Card.Text>
-                  <Link to="/:category">
-                    <Button
-                      className="border border-0 rounded-0"
-                      style={{ backgroundColor: "#031635" }}
-                    >
-                      Vai al menù
-                    </Button>
-                  </Link>
+                  {/* <Link to="/:category"> */}
+                  <Button
+                    className="border border-0 rounded-0"
+                    style={{ backgroundColor: "#031635" }}
+                    onClick={() => navigate(`/Tavola calda`)}
+                  >
+                    Vai al menù
+                  </Button>
+                  {/* </Link> */}
                 </Card.Body>
               </Card>
             </Col>
@@ -84,14 +87,15 @@ const CategoryMenu = () => {
                 >
                   <Card.Title>Bevande fresche</Card.Title>
                   <Card.Text>Aranciata, Sprite, Bissap...</Card.Text>
-                  <Link to="/:category">
-                    <Button
-                      className="border border-0 rounded-0"
-                      style={{ backgroundColor: "#031635" }}
-                    >
-                      Vai al menù
-                    </Button>
-                  </Link>
+                  {/* <Link to="/:category"> */}
+                  <Button
+                    className="border border-0 rounded-0"
+                    style={{ backgroundColor: "#031635" }}
+                    onClick={() => navigate(`/Bevande fresche`)}
+                  >
+                    Vai al menù
+                  </Button>
+                  {/* </Link> */}
                 </Card.Body>
               </Card>
             </Col>
@@ -114,14 +118,15 @@ const CategoryMenu = () => {
                 >
                   <Card.Title>Alcool</Card.Title>
                   <Card.Text>Birra, Vino, Gin...</Card.Text>
-                  <Link to="/:category">
-                    <Button
-                      className="border border-0 rounded-0"
-                      style={{ backgroundColor: "#031635" }}
-                    >
-                      Vai al menù
-                    </Button>
-                  </Link>
+                  {/* <Link to="/:category"> */}
+                  <Button
+                    className="border border-0 rounded-0"
+                    style={{ backgroundColor: "#031635" }}
+                    onClick={() => navigate(`/alcool`)}
+                  >
+                    Vai al menù
+                  </Button>
+                  {/* </Link> */}
                 </Card.Body>
               </Card>
             </Col>
