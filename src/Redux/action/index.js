@@ -1,6 +1,10 @@
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../..";
+
 export const PLUS_COUNTER = "PLUS_COUNTER";
 export const LESS_COUNTER = "LESS_COUNTER";
 export const GET_API = "GET_API";
+export const PIZZA = "PIZZA";
 
 export const plusCounterAction = (counterSelector) => ({
   type: PLUS_COUNTER,

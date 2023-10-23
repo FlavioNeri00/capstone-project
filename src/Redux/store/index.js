@@ -3,10 +3,10 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import persistReducer from "redux-persist/es/persistReducer";
 import storage from "redux-persist/lib/storage";
 import persistStore from "redux-persist/es/persistStore";
-import counterReducer from "../reducers/counterReducer";
+import pizzaReducer from "../reducers/pizzaReducer";
 
 const rootReducer = combineReducers({
-  counter: counterReducer,
+  pizza: pizzaReducer,
 });
 
 const persistedReducer = persistReducer({ key: "root", storage }, rootReducer);
