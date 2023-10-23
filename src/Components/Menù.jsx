@@ -41,9 +41,9 @@ const Menu = () => {
   return (
     <div>
       <Container>
-        {/* <div className="text-end">
+        <div className="text-end">
           <Cart />
-        </div> */}
+        </div>
 
         <Row>
           {pizza.map((food) => (

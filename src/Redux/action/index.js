@@ -5,6 +5,7 @@ export const PLUS_COUNTER = "PLUS_COUNTER";
 export const LESS_COUNTER = "LESS_COUNTER";
 export const GET_API = "GET_API";
 export const PIZZA = "PIZZA";
+export const ADD_TO_CART = "ADD_TO_CART";
 
 export const plusCounterAction = (counterSelector) => ({
   type: PLUS_COUNTER,
@@ -13,6 +14,11 @@ export const plusCounterAction = (counterSelector) => ({
 export const lessCounterAction = (counterSelector) => ({
   type: PLUS_COUNTER,
   payload: counterSelector - 1,
+});
+
+export const addToCartAction = (food) => ({
+  type: ADD_TO_CART,
+  payload: food,
 });
 
 // export const getAPIAction = () => {

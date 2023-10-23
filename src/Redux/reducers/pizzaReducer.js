@@ -1,4 +1,4 @@
-import { PIZZA } from "../action";
+import { ADD_TO_CART } from "../action";
 
 const initialState = {
   content: [],
@@ -6,11 +6,8 @@ const initialState = {
 
 const pizzaReducer = (state = initialState, action) => {
   switch (action.type) {
-    case PIZZA:
-      return {
-        ...state,
-        content: action.payload,
-      };
+    case ADD_TO_CART:
+      return { ...state, content: [...state.content, action.payload] };
 
     default:
       return state;

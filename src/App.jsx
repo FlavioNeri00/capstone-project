@@ -14,6 +14,7 @@ import BookList from "./Components/BookList";
 import Market from "./Components/Market";
 import MarketEvents from "./Components/MarketEvents";
 import CartElements from "./Components/CartElements";
+import AllCartElements from "./Components/AllCartElements";
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
           <Route path="/:category" element={<Menu />} />
           <Route path="/community" element={<Community />} />
           <Route path="/community/books" element={<BookList />} />
-          <Route path="/cafe/cart-shop" element={<CartElements />} />
+          <Route path="/cafe/cart-shop" element={<AllCartElements />} />
         </Routes>
         <Footer />
       </BrowserRouter>
