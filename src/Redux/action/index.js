@@ -6,6 +6,7 @@ export const LESS_COUNTER = "LESS_COUNTER";
 export const GET_API = "GET_API";
 export const PIZZA = "PIZZA";
 export const ADD_TO_CART = "ADD_TO_CART";
+export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 
 export const plusCounterAction = (counterSelector) => ({
   type: PLUS_COUNTER,
@@ -21,6 +22,10 @@ export const addToCartAction = (food) => ({
   payload: food,
 });
 
+export const removeFromCartAction = (i) => ({
+  type: REMOVE_FROM_CART,
+  payload: i,
+});
 // export const getAPIAction = () => {
 //      return async (dispatch, getState) => {
 //        try{

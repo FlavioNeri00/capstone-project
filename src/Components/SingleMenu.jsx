@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Badge, Button, Card, Col, Modal } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 
-import { addToCartAction } from "../Redux/action";
+import { addToCartAction, removeFromCartAction } from "../Redux/action";
 
 const SingleMenu = ({ food }) => {
   const [counter, setCounter] = useState(0);
@@ -13,6 +13,8 @@ const SingleMenu = ({ food }) => {
   };
   const decrementCounter = () => {
     setCounter(counter - 1);
+    if (counter === 1) {
+    }
   };
 
   const dispatch = useDispatch();

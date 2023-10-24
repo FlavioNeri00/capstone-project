@@ -116,13 +116,107 @@ const CategoryMenu = () => {
                 <Card.Body
                   style={{ backgroundColor: "#164194", color: "#F4E7DB" }}
                 >
-                  <Card.Title>Alcool</Card.Title>
-                  <Card.Text>Birra, Vino, Gin...</Card.Text>
+                  <Card.Title>Birre</Card.Title>
+                  <Card.Text>Ceres, Dello Stretto, Beck's...</Card.Text>
                   {/* <Link to="/:category"> */}
                   <Button
                     className="border border-0 rounded-0"
                     style={{ backgroundColor: "#031635" }}
-                    onClick={() => navigate(`/alcool`)}
+                    onClick={() => navigate(`/Birre`)}
+                  >
+                    Vai al menù
+                  </Button>
+                  {/* </Link> */}
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col xs={12} md={4} lg={3}>
+              <Card
+                style={{ width: "100%", height: "15rem" }}
+                className="border border-0 "
+              >
+                <Card.Img
+                  style={{
+                    objectFit: "cover",
+                    overflow: "hidden",
+                    objectPosition: "center -13rem ",
+                  }}
+                  variant="left"
+                  src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8QmVlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                />
+                <Card.Body
+                  style={{ backgroundColor: "#164194", color: "#F4E7DB" }}
+                >
+                  <Card.Title>Cocktail</Card.Title>
+                  <Card.Text>Spritz, Negroni, Gin Lemon...</Card.Text>
+                  {/* <Link to="/:category"> */}
+                  <Button
+                    className="border border-0 rounded-0"
+                    style={{ backgroundColor: "#031635" }}
+                    onClick={() => navigate(`/Cocktail`)}
+                  >
+                    Vai al menù
+                  </Button>
+                  {/* </Link> */}
+                </Card.Body>
+              </Card>
+            </Col>
+
+            <Col xs={12} md={4} lg={3}>
+              <Card
+                style={{ width: "100%", height: "15rem" }}
+                className="border border-0 "
+              >
+                <Card.Img
+                  style={{
+                    objectFit: "cover",
+                    overflow: "hidden",
+                    objectPosition: "center -13rem ",
+                  }}
+                  variant="left"
+                  src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8QmVlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                />
+                <Card.Body
+                  style={{ backgroundColor: "#164194", color: "#F4E7DB" }}
+                >
+                  <Card.Title>Vini</Card.Title>
+                  <Card.Text>Nero d'Avola, Grillo...</Card.Text>
+                  {/* <Link to="/:category"> */}
+                  <Button
+                    className="border border-0 rounded-0"
+                    style={{ backgroundColor: "#031635" }}
+                    onClick={() => navigate(`/Vini`)}
+                  >
+                    Vai al menù
+                  </Button>
+                  {/* </Link> */}
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col xs={12} md={4} lg={3}>
+              <Card
+                style={{ width: "100%", height: "15rem" }}
+                className="border border-0 "
+              >
+                <Card.Img
+                  style={{
+                    objectFit: "cover",
+                    overflow: "hidden",
+                    objectPosition: "center -13rem ",
+                  }}
+                  variant="left"
+                  src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8QmVlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                />
+                <Card.Body
+                  style={{ backgroundColor: "#164194", color: "#F4E7DB" }}
+                >
+                  <Card.Title>Amari</Card.Title>
+                  <Card.Text>Jagermeister, Del Capo...</Card.Text>
+                  {/* <Link to="/:category"> */}
+                  <Button
+                    className="border border-0 rounded-0"
+                    style={{ backgroundColor: "#031635" }}
+                    onClick={() => navigate(`/Amari`)}
                   >
                     Vai al menù
                   </Button>
