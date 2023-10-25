@@ -1,24 +1,46 @@
 import { useState } from "react";
 import { Badge, Button, Card, Col, Modal } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-import { addToCartAction, removeFromCartAction } from "../Redux/action";
+import {
+  addQuantityAction,
+  addToCartAction,
+  removeFromCartAction,
+} from "../Redux/action";
 
 const SingleMenu = ({ food }) => {
   const [counter, setCounter] = useState(0);
+  const foodSelector = useSelector((state) => state.pizza.content);
+  const [show, setShow] = useState(false);
+  const dispatch = useDispatch();
+
+  const incrementQuantity = () => {
+    food.Quantita++;
+  };
 
   const incrementCounter = () => {
-    setCounter(counter + 1);
-    dispatch(addToCartAction(food));
+    incrementQuantity();
+    let isTrovato = false;
+    foodSelector.forEach((element) => {
+      if (food.ID === element.ID) {
+        isTrovato = true;
+        console.log(food.Quantita);
+      }
+    });
+
+    if (!isTrovato) {
+      dispatch(addToCartAction(food));
+
+      console.log(food.Quantita);
+    }
+    addQuantityAction();
   };
+
   const decrementCounter = () => {
     setCounter(counter - 1);
     if (counter === 1) {
     }
   };
-
-  const dispatch = useDispatch();
-  const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -63,7 +85,10 @@ const SingleMenu = ({ food }) => {
                   {counter > 0 && (
                     <Button
                       className="m-0 p-0 border border-0"
-                      style={{ backgroundColor: "transparent", color: "black" }}
+                      style={{
+                        backgroundColor: "transparent",
+                        color: "black",
+                      }}
                       onClick={() => {
                         decrementCounter();
                       }}
@@ -71,7 +96,7 @@ const SingleMenu = ({ food }) => {
                       <p className="p-0 m-0 p-0 fs-2">-</p>
                     </Button>
                   )}
-                  <p className="m-0 ps-3 pt-2"> {counter}</p>{" "}
+                  <p className="m-0 ps-3 pt-2"> {food.Quantita}</p>{" "}
                   <Button
                     className=" border border-0 pe-1"
                     style={{ backgroundColor: "transparent", color: "black" }}
@@ -123,4 +148,5 @@ const SingleMenu = ({ food }) => {
     </>
   );
 };
+
 export default SingleMenu;

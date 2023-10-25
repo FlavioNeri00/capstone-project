@@ -3,7 +3,7 @@ import CartElements from "./CartElements";
 
 const AllCartElements = () => {
   const counterSelector = useSelector((state) => state.pizza.content);
-  console.log("yo", counterSelector);
+  console.log("yoooo", counterSelector);
 
   return counterSelector.map((cart) => (
     <CartElements key={cart.ID} cart={cart} />

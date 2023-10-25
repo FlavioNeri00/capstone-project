@@ -8,6 +8,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import store, { persistedStore } from "./Redux/store";
 // Your web app's Firebase configuration
 import { initializeApp } from "firebase/app";
+import { getStorage } from "firebase/storage";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -21,6 +22,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
+export const storage = getStorage(app);
 console.log(db);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
