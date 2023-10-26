@@ -132,12 +132,12 @@ const SingleMenu = ({ food }) => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>{food.id}</Modal.Title>
+          <Modal.Title className="font-fraunces">{food.id}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="font-futura">
           <ul>
-            {food.Ingredienti.map((i) => (
-              <li key={food.ID}>{i}</li>
+            {food.Ingredienti.map((i, index) => (
+              <li key={index}>{i}</li>
             ))}
           </ul>
         </Modal.Body>

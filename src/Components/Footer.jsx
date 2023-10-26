@@ -5,7 +5,10 @@ import ttt from "../assets/photo1696362773__2_-removebg-preview.png";
 import { Link } from "react-router-dom";
 const Footer = () => {
   return (
-    <div style={{ backgroundColor: "#F2B708" }} className="pb-3 pt-4 shadow-lg">
+    <div
+      style={{ backgroundColor: "#F2B708", verticalAlign: "bottom" }}
+      className="pb-3 pt-4 shadow-lg"
+    >
       <Container>
         <div className="d-flex justify-content-between">
           <span className="text-white" style={{ fontSize: "13px" }}>

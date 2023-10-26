@@ -142,7 +142,7 @@ const CategoryMenu = () => {
                     objectPosition: "center -13rem ",
                   }}
                   variant="left"
-                  src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8QmVlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                  src="https://images.unsplash.com/photo-1609951651556-5334e2706168?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29ja3RhaWx8ZW58MHx8MHx8fDA%3D"
                 />
                 <Card.Body
                   style={{ backgroundColor: "#164194", color: "#F4E7DB" }}
@@ -171,10 +171,10 @@ const CategoryMenu = () => {
                   style={{
                     objectFit: "cover",
                     overflow: "hidden",
-                    objectPosition: "center -13rem ",
+                    objectPosition: "center -10rem ",
                   }}
                   variant="left"
-                  src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8QmVlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                  src="https://images.unsplash.com/photo-1585553616435-2dc0a54e271d?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d2luZXxlbnwwfHwwfHx8MA%3D%3D"
                 />
                 <Card.Body
                   style={{ backgroundColor: "#164194", color: "#F4E7DB" }}
@@ -202,10 +202,10 @@ const CategoryMenu = () => {
                   style={{
                     objectFit: "cover",
                     overflow: "hidden",
-                    objectPosition: "center -13rem ",
+                    objectPosition: "center -5rem ",
                   }}
                   variant="left"
-                  src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8QmVlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWwoHjUpfX20nVXz_5Whq_i0kf8nBzNToWfQ&usqp=CAU"
                 />
                 <Card.Body
                   style={{ backgroundColor: "#164194", color: "#F4E7DB" }}

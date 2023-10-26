@@ -2,13 +2,20 @@ import { useEffect, useState } from "react";
 import SingleBook from "./SingleBook";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "..";
-import { Container, Form, InputGroup, Row } from "react-bootstrap";
+import { Button, Container, Form, InputGroup, Row } from "react-bootstrap";
 import { AiOutlineSearch } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { exitLoginAction } from "../Redux/action";
 
 const BookList = () => {
   const [inputSearch, setInputSearch] = useState("");
   const [books, setBooks] = useState([]);
-  // const alertSelector = useSelector((state) => state.books.avalaible);
+  const userSelector = useSelector((state) => state.books.content);
+  const loginSelector = useSelector((state) => state.login.login);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   async function BooksAction() {
     let bookList = [];
     const book = collection(db, "BooksCommunity");
@@ -54,6 +61,38 @@ const BookList = () => {
   return (
     <div>
       <Container>
+        <div className="text-end">
+          {" "}
+          {userSelector ? (
+            <>
+              <h3 className="font-fraunces mt-4" style={{ color: "#F4E7DB" }}>
+                Benvenut* {userSelector}
+              </h3>
+              <h6
+                style={{
+                  textDecoration: "underline",
+                  color: "#F4E7DB",
+                  cursor: "pointer",
+                }}
+                onClick={() => dispatch(exitLoginAction(""))}
+              >
+                Esci dal tuo profilo
+              </h6>
+            </>
+          ) : (
+            <Button
+              className="mt-4 rounded-0 border border-0"
+              style={{
+                backgroundColor: "#EA5045",
+
+                fontSize: "20px",
+              }}
+              onClick={() => navigate("/login")}
+            >
+              Accedi al tuo profilo
+            </Button>
+          )}
+        </div>
         <h2
           className="font-fraunces display-2 ms-2 mt-2"
           style={{ color: "#F4E7DB" }}
@@ -61,7 +100,7 @@ const BookList = () => {
           I libri di Scaro Community
         </h2>
         <div className="d-flex justify-content-end">
-          <form className="mb-3">
+          <form className="mb-4">
             <AiOutlineSearch
               className="fs-4"
               style={{ borderBottom: "1px solid #164194" }}

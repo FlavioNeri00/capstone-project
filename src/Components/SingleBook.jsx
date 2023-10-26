@@ -10,7 +10,8 @@ import {
   Row,
 } from "react-bootstrap";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const SingleBook = ({ book }) => {
   const [show, setShow] = useState(false);
@@ -26,8 +27,8 @@ const SingleBook = ({ book }) => {
   const handleShowReturn = () => setShowReturn(true);
 
   const [isAvailable, setIsAvailable] = useState(true);
+  const userSelector = useSelector((state) => state.books.content);
 
-  const dispatch = useDispatch();
   const date = new Date(Date.now() + 12096e5);
   const dateBook = `${date.getDate()}/${
     date.getMonth() + 1
@@ -38,9 +39,9 @@ const SingleBook = ({ book }) => {
     console.log(isAvailable);
   };
 
+  const navigate = useNavigate();
   return (
     <>
-      {/* {showAlert === true ? <AlertBookBorrowed /> : <></>} */}
       <Col xs={12} sm={6} md={4} lg={3}>
         <Card
           className=" border border-0 mb-2"
@@ -96,7 +97,16 @@ const SingleBook = ({ book }) => {
                   {book.id}
                 </Card.Title>
               </div>
-              {isAvailable === true ? (
+
+              {!userSelector ? (
+                <Button
+                  className="rounded-0 ms-2 mt-2 border border-0 fw-bold"
+                  style={{ backgroundColor: "#F4E7DB", color: "#164194" }}
+                  onClick={() => navigate("/login")}
+                >
+                  Prenota
+                </Button>
+              ) : isAvailable === true ? (
                 <Button
                   className="rounded-0 ms-2 mt-2 border border-0 fw-bold"
                   style={{ backgroundColor: "#F4E7DB", color: "#164194" }}
@@ -119,6 +129,7 @@ const SingleBook = ({ book }) => {
                   <span>Restituisci</span>
                 </Button>
               )}
+
               <h6
                 className="ingredients text-end me-2 mb-3"
                 onClick={handleShow}
@@ -129,7 +140,6 @@ const SingleBook = ({ book }) => {
               >
                 Dettagli
               </h6>
-
               <div className="d-flex align-items-end"></div>
             </div>
           </Card.Body>
@@ -138,26 +148,35 @@ const SingleBook = ({ book }) => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>{book.id}</Modal.Title>
+          <Modal.Title className="font-fraunces">{book.id}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <ul>
-            <li>Autore: {book.Autore}</li>
-            <li>Genere: {book.Genere}</li>
-            <li>Casa editrice:{book.Casa_editrice}</li>
+            <li>
+              <span className="font-fraunces">Genere: </span>
+              <span className="font-futura">{book.Genere}</span>
+            </li>
+            <li>
+              <span className="font-fraunces">Autore: </span>{" "}
+              <span className="font-futura">{book.Autore}</span>
+            </li>
+            <li>
+              <span className="font-fraunces">Casa editrice: </span>
+              <span className="font-futura">{book.Casa_editrice} </span>
+            </li>
           </ul>
         </Modal.Body>
       </Modal>
 
       <Modal show={showBorrow} onHide={handleCloseBorrow}>
-        <Modal.Body className="font-fraunces" style={{ fontSize: "20px" }}>
+        <Modal.Body className="font-fraunces" style={{ fontSize: "15px" }}>
           Puoi venire a recuperare "{book.id}" quando vuoi in sede! <br />{" "}
           Dovrai riconsegnarlo entro il {dateBook}!
         </Modal.Body>
       </Modal>
 
       <Modal show={showReturn} onHide={handleCloseReturn}>
-        <Modal.Body className="font-fraunces" style={{ fontSize: "20px" }}>
+        <Modal.Body className="font-fraunces" style={{ fontSize: "15px" }}>
           Grazie per aver restituito "{book.id}" di {book.Autore}!
         </Modal.Body>
       </Modal>

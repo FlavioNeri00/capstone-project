@@ -1,17 +1,18 @@
-// import { ALERT_TRUE } from "../action";
+import { ALERT_TRUE, EXIT_LOGIN, SET_USERNAME } from "../action";
 
-// const initialState = {
-//   avalaible: false,
-// };
+const initialState = {
+  content: "",
+};
 
-// const booksReducer = (state = initialState, action) => {
-//   switch (action.type) {
-//     case ALERT_TRUE:
-//       return { avalaible: action.payload };
+const booksReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case SET_USERNAME:
+      return { content: action.payload };
+    case EXIT_LOGIN:
+      return { content: action.payload };
+    default:
+      return state;
+  }
+};
 
-//     default:
-//       return state;
-//   }
-// };
-
-// export default booksReducer;
+export default booksReducer;
