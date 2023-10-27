@@ -1,11 +1,9 @@
 export const ADD_TO_CART = "ADD_TO_CART";
 export const LESS_TO_CART = "LESS_TO_CART";
-export const ADD_QUANTITY = "ADD_QUANTITY";
 export const SET_USERNAME = "SET_USERNAME";
-export const SET_LOGIN = "SET_LOGIN";
 export const EXIT_LOGIN = "EXIT_LOGIN";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
-export const ADD = "ADD";
+export const ADD_TO_TOTAL = "ADD_TO_TOTAL";
 
 export const addToCartAction = (food) => ({
   type: ADD_TO_CART,
@@ -30,4 +28,9 @@ export const removeFromCartAction = (i) => ({
 export const exitLoginAction = (exitLogin) => ({
   type: EXIT_LOGIN,
   payload: exitLogin,
+});
+
+export const addToTotal = (total) => ({
+  type: ADD_TO_TOTAL,
+  payload: total,
 });

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import {
   addToCartAction,
+  addToTotal,
   lessToCartAction,
   removeFromCartAction,
 } from "../Redux/action";
@@ -18,6 +19,7 @@ const SingleMenu = ({ food }) => {
     if (find.length === 0) {
       food.Quantita = 1;
       dispatch(addToCartAction(food));
+      dispatch(addToTotal(parseFloat(food.Prezzo)));
     } else {
       dispatch(removeFromCartAction(food));
       dispatch(
@@ -27,6 +29,7 @@ const SingleMenu = ({ food }) => {
         })
       );
       food.Quantita = find[0].Quantita + 1;
+      dispatch(addToTotal(parseFloat(food.Prezzo)));
     }
   };
 

@@ -5,10 +5,9 @@ import { Container } from "react-bootstrap";
 
 const AllCartElements = () => {
   const cafeSelector = useSelector((state) => state.cafe.content);
-
+  const totalSelector = useSelector((state) => state.total.content);
   const total = cafeSelector.reduce(
-    (totalPrice, item) =>
-      totalPrice + parseFloat(item.Prezzo.replace(",", ".")),
+    (totalPrice, item) => totalPrice + parseFloat(item.Prezzo),
     0
   );
 
@@ -25,7 +24,7 @@ const AllCartElements = () => {
               {" "}
               <span style={{ fontSize: "30px", color: "#F4E7DB" }}>
                 {" "}
-                Totale: {total.toString().replace(".", ",")}
+                Totale: {totalSelector}
               </span>
             </div>
           </Container>
