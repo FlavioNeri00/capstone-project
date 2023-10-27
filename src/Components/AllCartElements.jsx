@@ -6,10 +6,6 @@ import { Container } from "react-bootstrap";
 const AllCartElements = () => {
   const cafeSelector = useSelector((state) => state.cafe.content);
   const totalSelector = useSelector((state) => state.total.content);
-  const total = cafeSelector.reduce(
-    (totalPrice, item) => totalPrice + parseFloat(item.Prezzo),
-    0
-  );
 
   return (
     <div>

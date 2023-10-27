@@ -6,6 +6,7 @@ import {
   addToCartAction,
   addToTotal,
   lessToCartAction,
+  lessToTotal,
   removeFromCartAction,
 } from "../Redux/action";
 
@@ -14,6 +15,7 @@ const SingleMenu = ({ food }) => {
   const dispatch = useDispatch();
   const cafeSelector = useSelector((state) => state.cafe.content);
   const find = cafeSelector.filter((i) => i.ID === food.ID);
+  console.log(find[0]?.Quantita);
 
   const addTocart = () => {
     if (find.length === 0) {
@@ -36,6 +38,7 @@ const SingleMenu = ({ food }) => {
   const decrementCounter = () => {
     if (find[0].Quantita === 1) {
       dispatch(removeFromCartAction(find[0]));
+      dispatch(lessToTotal(parseFloat(food.Prezzo.replace(",", "."))));
       food.Quantita = 0;
     } else {
       dispatch(removeFromCartAction(find[0]));
@@ -45,6 +48,7 @@ const SingleMenu = ({ food }) => {
           Quantita: find[0].Quantita - 1,
         })
       );
+      dispatch(lessToTotal(parseFloat(find[0].Prezzo.replace(",", "."))));
       food.Quantita = find[0].Quantita - 1;
     }
     console.log(find);
@@ -83,7 +87,7 @@ const SingleMenu = ({ food }) => {
                   className="d-flex ps-1 align-items-center justify-content-start card-hover shadow-lg "
                   style={{ backgroundColor: "#F2B708", height: "36px" }}
                 >
-                  {food.Quantita > 0 && (
+                  {find[0]?.Quantita > 0 && (
                     <Button
                       className="m-0 p-0 border border-0"
                       style={{
@@ -97,7 +101,11 @@ const SingleMenu = ({ food }) => {
                       <p className="p-0 m-0 p-0 fs-2">-</p>
                     </Button>
                   )}
-                  <p className="m-0 ps-3 pt-2">{food.Quantita}</p>{" "}
+                  {find[0]?.Quantita !== undefined ? (
+                    <p className="m-0 ps-3 pt-2">{find[0].Quantita}</p>
+                  ) : (
+                    <p className="m-0 ps-3 pt-2">0</p>
+                  )}
                   <Button
                     className=" border border-0 pe-1"
                     style={{ backgroundColor: "transparent", color: "black" }}

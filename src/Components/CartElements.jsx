@@ -4,6 +4,7 @@ import {
   addToCartAction,
   addToTotal,
   lessToCartAction,
+  lessToTotal,
   removeFromCartAction,
 } from "../Redux/action";
 
@@ -36,6 +37,7 @@ const CartElements = ({ cart }) => {
   const decrementCounter = () => {
     if (find[0].Quantita === 1) {
       dispatch(removeFromCartAction(find[0]));
+      dispatch(lessToTotal(parseFloat(cart.Prezzo.replace(",", "."))));
       cart.Quantita = 0;
     } else if (find[0].Quantita > 1) {
       dispatch(removeFromCartAction(find[0]));
@@ -45,6 +47,7 @@ const CartElements = ({ cart }) => {
           Quantita: find[0].Quantita - 1,
         })
       );
+      dispatch(lessToTotal(parseFloat(cart.Prezzo.replace(",", "."))));
       cart.Quantita = find[0].Quantita - 1;
     }
   };

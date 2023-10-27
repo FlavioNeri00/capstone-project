@@ -10,29 +10,25 @@ import { db } from "..";
 import { useParams } from "react-router-dom";
 
 const Menu = () => {
-  const [pizza, setPizza] = useState([]);
+  const [cafe, setCafe] = useState([]);
 
   const params = useParams();
   const myCategory = params.category;
   console.log(myCategory);
   console.log(params);
   async function PizzaAction() {
-    let pizzaList = [];
-    const pizza = collection(db, myCategory);
-    const pizzaDoc = await getDocs(pizza);
-    console.log("yyo", pizzaDoc);
+    let cafeList = [];
+    const cafeColl = collection(db, myCategory);
+    const cafeDoc = await getDocs(cafeColl);
 
-    pizzaList.push(
-      ...pizzaDoc.docs.map((i) => ({
+    cafeList.push(
+      ...cafeDoc.docs.map((i) => ({
         ...i.data(),
         id: i.id,
       }))
     );
 
-    console.log("au", pizzaList);
-
-    setPizza(pizzaList);
-    console.log("yo", pizza);
+    setCafe(cafeList);
   }
   useEffect(() => {
     PizzaAction();
@@ -46,7 +42,7 @@ const Menu = () => {
         </div>
 
         <Row>
-          {pizza.map((food) => (
+          {cafe.map((food) => (
             <SingleMenu key={food.ID} food={food} />
           ))}
         </Row>

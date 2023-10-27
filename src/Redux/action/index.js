@@ -4,6 +4,7 @@ export const SET_USERNAME = "SET_USERNAME";
 export const EXIT_LOGIN = "EXIT_LOGIN";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 export const ADD_TO_TOTAL = "ADD_TO_TOTAL";
+export const LESS_TO_TOTAL = "LESS_TO_TOTAL";
 
 export const addToCartAction = (food) => ({
   type: ADD_TO_CART,
@@ -32,5 +33,10 @@ export const exitLoginAction = (exitLogin) => ({
 
 export const addToTotal = (total) => ({
   type: ADD_TO_TOTAL,
+  payload: total,
+});
+
+export const lessToTotal = (total) => ({
+  type: LESS_TO_TOTAL,
   payload: total,
 });
