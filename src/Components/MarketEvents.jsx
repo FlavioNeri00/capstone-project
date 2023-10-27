@@ -13,7 +13,6 @@ const MarketEvents = () => {
     let eventList = [];
     const event = collection(db, "Events");
     const eventDoc = await getDocs(event);
-    console.log("yyo", eventDoc);
 
     eventList.push(
       ...eventDoc.docs.map((i) => ({
@@ -22,10 +21,7 @@ const MarketEvents = () => {
       }))
     );
 
-    console.log("au", eventList);
-
     setEventsMarket(eventList);
-    console.log("yo", eventsMarket);
   }
   useEffect(() => {
     EventsAction();
@@ -34,7 +30,6 @@ const MarketEvents = () => {
     let specialEventList = [];
     const specialEvent = collection(db, "SpecialEvents");
     const specialEventDoc = await getDocs(specialEvent);
-    console.log("yyo", specialEventDoc);
 
     specialEventList.push(
       ...specialEventDoc.docs.map((i) => ({
@@ -43,10 +38,7 @@ const MarketEvents = () => {
       }))
     );
 
-    console.log("au", specialEventList);
-
     setSpecialEventsMarket(specialEventList);
-    console.log("yo", specialEventsMarket);
   }
 
   useEffect(() => {

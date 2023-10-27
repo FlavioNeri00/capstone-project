@@ -15,7 +15,6 @@ const SingleMenu = ({ food }) => {
   const dispatch = useDispatch();
   const cafeSelector = useSelector((state) => state.cafe.content);
   const find = cafeSelector.filter((i) => i.ID === food.ID);
-  console.log(find[0]?.Quantita);
 
   const addTocart = () => {
     if (find.length === 0) {

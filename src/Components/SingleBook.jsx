@@ -27,7 +27,6 @@ const SingleBook = ({ book }) => {
 
   const bookingBook = () => {
     setIsAvailable(!isAvailable);
-    console.log(isAvailable);
   };
 
   const navigate = useNavigate();

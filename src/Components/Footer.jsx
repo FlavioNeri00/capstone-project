@@ -33,7 +33,7 @@ const Footer = () => {
         <div className="d-flex flex-column justify-content-between">
           <div className="pe-5">
             <span className="text-white" style={{ fontSize: "13px" }}>
-              P.zza Ravanusella, 1
+              P.zza Ravanusella, 1 - Agrigento(AG)
             </span>
           </div>
           <h6 className="mt-3" style={{ color: "white" }}>

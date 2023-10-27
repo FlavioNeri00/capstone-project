@@ -14,8 +14,7 @@ const Menu = () => {
 
   const params = useParams();
   const myCategory = params.category;
-  console.log(myCategory);
-  console.log(params);
+
   async function PizzaAction() {
     let cafeList = [];
     const cafeColl = collection(db, myCategory);

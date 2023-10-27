@@ -139,7 +139,7 @@ const CategoryMenu = () => {
                   style={{
                     objectFit: "cover",
                     overflow: "hidden",
-                    objectPosition: "center -8rem ",
+                    objectPosition: "center -11rem ",
                   }}
                   variant="left"
                   src="https://images.unsplash.com/photo-1609951651556-5334e2706168?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29ja3RhaWx8ZW58MHx8MHx8fDA%3D"
