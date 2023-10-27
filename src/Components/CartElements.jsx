@@ -17,7 +17,8 @@ const CartElements = ({ cart }) => {
     if (find.length === 0) {
       cart.Quantita = 1;
       dispatch(addToCartAction(cart));
-      dispatch(addToTotal(parseFloat(cart.Prezzo)));
+
+      dispatch(addToTotal(parseFloat(cart.Prezzo.replace(",", "."))));
     } else {
       dispatch(removeFromCartAction(cart));
       dispatch(
@@ -27,7 +28,8 @@ const CartElements = ({ cart }) => {
         })
       );
       cart.Quantita = find[0].Quantita + 1;
-      dispatch(addToTotal(parseFloat(find[0].Prezzo)));
+
+      dispatch(addToTotal(parseFloat(find[0].Prezzo.replace(",", "."))));
     }
   };
 

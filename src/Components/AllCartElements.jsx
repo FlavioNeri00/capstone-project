@@ -24,7 +24,7 @@ const AllCartElements = () => {
               {" "}
               <span style={{ fontSize: "30px", color: "#F4E7DB" }}>
                 {" "}
-                Totale: {totalSelector}
+                Totale: {totalSelector}&euro;
               </span>
             </div>
           </Container>

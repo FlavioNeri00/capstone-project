@@ -9,7 +9,7 @@ const totalReducer = (state = initialState, action) => {
     case ADD_TO_TOTAL:
       return {
         ...state,
-        content: state.content + action.payload,
+        content: parseFloat(state.content + action.payload),
       };
     default:
       return state;
