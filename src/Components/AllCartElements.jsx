@@ -13,9 +13,11 @@ const AllCartElements = () => {
       {cafeSelector.length > 0 ? (
         <div>
           <Container>
-            {cafeSelector.map((cart) => (
-              <CartElements key={cart.ID} cart={cart} />
-            ))}
+            {[...cafeSelector]
+              .sort((a, b) => (a.id > b.id ? 1 : -1))
+              .map((cart) => (
+                <CartElements key={cart.ID} cart={cart} />
+              ))}
             <div className="text-end mb-5 font-lato ">
               {" "}
               <span style={{ fontSize: "30px", color: "#F4E7DB" }}>
