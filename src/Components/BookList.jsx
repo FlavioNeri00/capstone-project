@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import SingleBook from "./SingleBook";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "..";
-import { Button, Container, Form, InputGroup, Row } from "react-bootstrap";
+import { Button, Container, Row } from "react-bootstrap";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -11,8 +11,8 @@ import { exitLoginAction } from "../Redux/action";
 const BookList = () => {
   const [inputSearch, setInputSearch] = useState("");
   const [books, setBooks] = useState([]);
-  const userSelector = useSelector((state) => state.books.content);
-  const loginSelector = useSelector((state) => state.login.login);
+  const userSelector = useSelector((state) => state.login.content);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -20,7 +20,6 @@ const BookList = () => {
     let bookList = [];
     const book = collection(db, "BooksCommunity");
     const bookDoc = await getDocs(book);
-    console.log("yyo", bookDoc);
 
     bookList.push(
       ...bookDoc.docs.map((i) => ({
@@ -29,10 +28,7 @@ const BookList = () => {
       }))
     );
 
-    console.log("au", bookList);
-
     setBooks(bookList);
-    console.log("yo", books);
   }
   useEffect(() => {
     BooksAction();

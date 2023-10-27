@@ -1,56 +1,102 @@
+import { Button, Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { lessCounterAction, plusCounterAction } from "../Redux/action";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import {
+  addToCartAction,
+  lessToCartAction,
+  removeFromCartAction,
+} from "../Redux/action";
+import { useNavigate } from "react-router-dom";
 
 const CartElements = ({ cart }) => {
+  const cafeSelector = useSelector((state) => state.cafe.content);
+  const find = cafeSelector.filter((i) => i.ID === cart.ID);
+
   const dispatch = useDispatch();
 
+  const addTocart = () => {
+    if (find.length === 0) {
+      cart.Quantita = 1;
+      dispatch(addToCartAction(cart));
+    } else {
+      dispatch(removeFromCartAction(cart));
+      dispatch(
+        addToCartAction({
+          ...find[0],
+          Quantita: find[0].Quantita + 1,
+        })
+      );
+      cart.Quantita = find[0].Quantita + 1;
+    }
+  };
+
+  const decrementCounter = () => {
+    if (find[0].Quantita === 1) {
+      dispatch(removeFromCartAction(find[0]));
+      cart.Quantita = 0;
+    } else if (find[0].Quantita > 1) {
+      dispatch(removeFromCartAction(find[0]));
+      dispatch(
+        lessToCartAction({
+          ...find[0],
+          Quantita: find[0].Quantita - 1,
+        })
+      );
+      cart.Quantita = find[0].Quantita - 1;
+    }
+  };
   return (
     <div>
       <Container>
-        <Row>
-          <Col>
-            <div
-              className="d-flex flex-column flex-sm-row my-2 w-sm-25"
-              style={{
-                backgroundColor: "#164194",
-                color: "#F2B708",
-                width: "100%",
-              }}
-            >
-              <img
-                src={cart.Img}
-                alt=""
-                style={{ maxWidth: "17rem", height: "10rem" }}
-                className="img-fluid"
-              />
+        <div
+          className="d-flex flex-column flex-sm-row  my-5 align-items-center align-items-md-start"
+          style={{
+            color: "#164194",
+          }}
+        >
+          <img
+            src={cart.Img}
+            alt=""
+            style={{ width: "200px", aspectRatio: "1/1" }}
+          />
 
-              <div className="d-sm-flex flex-column align-items-start ms-2">
-                <h2>{cart.id}</h2>
-                <h3>{cart.Prezzo}&euro;</h3>
-                <div
-                  className="d-flex align-items-center justify-content-start card-hover "
-                  style={{}}
+          <div className="d-sm-flex flex-column align-items-start ms-4">
+            <h2>{cart.id}</h2>
+            <h3 style={{ color: "#F4E7DB" }}>{cart.Prezzo}&euro;</h3>
+            <div
+              className="d-flex align-items-center justify-content-start card-hover mb-5"
+              style={{}}
+            >
+              {" "}
+              <Button
+                className="m-0 p-0 border border-0"
+                style={{ backgroundColor: "transparent", color: "#164194" }}
+              >
+                <p
+                  className="p-0 m-0 p-0 fs-2"
+                  onClick={() => {
+                    decrementCounter();
+                  }}
                 >
-                  {" "}
-                  <Button
-                    className="m-0 p-0 border border-0"
-                    style={{ backgroundColor: "transparent" }}
-                  >
-                    <p className="p-0 m-0 p-0 fs-2">-</p>
-                  </Button>
-                  <p className="m-0 ps-3 pt-2"> </p>{" "}
-                  <Button
-                    className=" border border-0"
-                    style={{ backgroundColor: "transparent" }}
-                  >
-                    <p className="m-0 p-0 fs-2">+</p>
-                  </Button>
-                </div>
-              </div>
+                  -
+                </p>
+              </Button>
+              <p className="m-0 ps-3 pt-2"> {cart.Quantita} </p>{" "}
+              <Button
+                className=" border border-0"
+                style={{ backgroundColor: "transparent", color: "#164194" }}
+              >
+                <p
+                  className="m-0 p-0 fs-2"
+                  onClick={() => {
+                    addTocart();
+                  }}
+                >
+                  +
+                </p>
+              </Button>
             </div>
-          </Col>
-        </Row>
+          </div>
+        </div>
       </Container>
     </div>
   );

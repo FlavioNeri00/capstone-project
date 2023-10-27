@@ -3,6 +3,7 @@ import { BsFacebook, BsInstagram } from "react-icons/bs";
 import sbem from "../assets/vettoriale_sbem_page-0003-removebg.png";
 import ttt from "../assets/photo1696362773__2_-removebg-preview.png";
 import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <div
@@ -16,11 +17,14 @@ const Footer = () => {
             &copy;Scaro{" "}
           </span>
           <div className="text-white">
-            <Link to="https://www.facebook.com/profile.php?id=61551029436658">
+            <Link
+              to="https://www.facebook.com/profile.php?id=61551029436658"
+              target="_blank"
+            >
               {" "}
               <BsFacebook className="fs-4 me-3" color="#3b5998" />
             </Link>
-            <Link to="https://www.instagram.com/scaro.cafe/">
+            <Link to="https://www.instagram.com/scaro.cafe/" target="_blank">
               {" "}
               <BsInstagram className="fs-4" color="#D62976" />
             </Link>

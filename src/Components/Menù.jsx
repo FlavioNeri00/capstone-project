@@ -2,9 +2,9 @@ import { Container, Row } from "react-bootstrap";
 
 import SingleMenu from "./SingleMenu";
 import Cart from "./Cart";
-import { useSelector } from "react-redux";
+
 import { useEffect, useState } from "react";
-import { PizzaAction } from "../Redux/action";
+
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "..";
 import { useParams } from "react-router-dom";

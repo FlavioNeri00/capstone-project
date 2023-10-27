@@ -1,5 +1,5 @@
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Cart from "./Cart";
 
 const CategoryMenu = () => {

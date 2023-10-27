@@ -1,7 +1,6 @@
 import { Col, Container, Modal } from "react-bootstrap";
-import mercoUni from "../assets/mercoledi universitario scaro.jpg";
+
 import { useState } from "react";
-import eventSpac from "../assets/evento speciale scaro.jpg";
 
 const SingleEventMaket = ({ event }) => {
   const [show, setShow] = useState(false);

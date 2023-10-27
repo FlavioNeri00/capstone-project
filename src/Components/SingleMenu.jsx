@@ -1,45 +1,50 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Badge, Button, Card, Col, Modal } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
-  addQuantityAction,
   addToCartAction,
+  lessToCartAction,
   removeFromCartAction,
 } from "../Redux/action";
 
 const SingleMenu = ({ food }) => {
-  const [counter, setCounter] = useState(0);
-  const foodSelector = useSelector((state) => state.pizza.content);
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
+  const cafeSelector = useSelector((state) => state.cafe.content);
+  const find = cafeSelector.filter((i) => i.ID === food.ID);
 
-  const incrementQuantity = () => {
-    food.Quantita++;
-  };
-
-  const incrementCounter = () => {
-    incrementQuantity();
-    let isTrovato = false;
-    foodSelector.forEach((element) => {
-      if (food.ID === element.ID) {
-        isTrovato = true;
-        console.log(food.Quantita);
-      }
-    });
-
-    if (!isTrovato) {
+  const addTocart = () => {
+    if (find.length === 0) {
+      food.Quantita = 1;
       dispatch(addToCartAction(food));
-
-      console.log(food.Quantita);
+    } else {
+      dispatch(removeFromCartAction(food));
+      dispatch(
+        addToCartAction({
+          ...find[0],
+          Quantita: find[0].Quantita + 1,
+        })
+      );
+      food.Quantita = find[0].Quantita + 1;
     }
-    addQuantityAction();
   };
 
   const decrementCounter = () => {
-    setCounter(counter - 1);
-    if (counter === 1) {
+    if (find[0].Quantita === 1) {
+      dispatch(removeFromCartAction(find[0]));
+      food.Quantita = 0;
+    } else {
+      dispatch(removeFromCartAction(find[0]));
+      dispatch(
+        lessToCartAction({
+          ...find[0],
+          Quantita: find[0].Quantita - 1,
+        })
+      );
+      food.Quantita = find[0].Quantita - 1;
     }
+    console.log(find);
   };
 
   const handleClose = () => setShow(false);
@@ -69,20 +74,13 @@ const SingleMenu = ({ food }) => {
             </div>
 
             <div className="d-flex justify-content-between align-items-end ">
-              <div
-                className=""
-                style={
-                  {
-                    // paddingBlockStart: "8em",
-                  }
-                }
-              >
+              <div>
                 {" "}
                 <div
                   className="d-flex ps-1 align-items-center justify-content-start card-hover shadow-lg "
                   style={{ backgroundColor: "#F2B708", height: "36px" }}
                 >
-                  {counter > 0 && (
+                  {food.Quantita > 0 && (
                     <Button
                       className="m-0 p-0 border border-0"
                       style={{
@@ -96,12 +94,12 @@ const SingleMenu = ({ food }) => {
                       <p className="p-0 m-0 p-0 fs-2">-</p>
                     </Button>
                   )}
-                  <p className="m-0 ps-3 pt-2"> {food.Quantita}</p>{" "}
+                  <p className="m-0 ps-3 pt-2">{food.Quantita}</p>{" "}
                   <Button
                     className=" border border-0 pe-1"
                     style={{ backgroundColor: "transparent", color: "black" }}
                     onClick={() => {
-                      incrementCounter();
+                      addTocart();
                     }}
                   >
                     <p className="m-0 p-0 fs-2">+</p>

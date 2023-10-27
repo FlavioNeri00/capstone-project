@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Cart = (props) => {
-  const cartLength = useSelector((state) => state.pizza.content);
+  const cartLength = useSelector((state) => state.cafe.content);
 
   return (
     <div className="mt-2 ">

@@ -6,7 +6,6 @@ import { setLoginAction, setUsernameAction } from "../Redux/action";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
-  const [login, setLogin] = useState(false);
 
   const navigate = useNavigate();
 
@@ -16,8 +15,6 @@ const LoginPage = () => {
     e.preventDefault();
     setUsername(e.target.value);
     dispatch(setUsernameAction(username));
-    setLogin(!login);
-    dispatch(setLoginAction(login));
   };
 
   return (

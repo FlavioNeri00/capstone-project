@@ -19,7 +19,7 @@ import LoginPage from "./Components/LoginPage";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App ">
       <BrowserRouter>
         <TopBar />
         <Routes>

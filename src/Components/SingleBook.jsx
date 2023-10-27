@@ -1,16 +1,7 @@
 import { useState } from "react";
-import {
-  Alert,
-  Badge,
-  Button,
-  Card,
-  Col,
-  Container,
-  Modal,
-  Row,
-} from "react-bootstrap";
+import { Badge, Button, Card, Col, Modal } from "react-bootstrap";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const SingleBook = ({ book }) => {
@@ -27,7 +18,7 @@ const SingleBook = ({ book }) => {
   const handleShowReturn = () => setShowReturn(true);
 
   const [isAvailable, setIsAvailable] = useState(true);
-  const userSelector = useSelector((state) => state.books.content);
+  const userSelector = useSelector((state) => state.login.content);
 
   const date = new Date(Date.now() + 12096e5);
   const dateBook = `${date.getDate()}/${
