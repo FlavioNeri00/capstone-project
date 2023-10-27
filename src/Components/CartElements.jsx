@@ -63,8 +63,8 @@ const CartElements = ({ cart }) => {
             <h2>{cart.id}</h2>
             <h3 style={{ color: "#F4E7DB" }}>{cart.Prezzo}&euro;</h3>
             <div
-              className="d-flex align-items-center justify-content-start card-hover mb-5"
-              style={{}}
+              className="d-flex align-items-center justify-content-start card-hover mb-5 font-lato"
+              style={{ color: "#EA5045" }}
             >
               {" "}
               <Button
