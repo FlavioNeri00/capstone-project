@@ -22,7 +22,7 @@ const AllCartElements = () => {
               {" "}
               <span style={{ fontSize: "30px", color: "#F4E7DB" }}>
                 {" "}
-                Totale: {totalSelector}&euro;
+                Totale: {totalSelector.toLocaleString().replace(".", ".")}&euro;
               </span>
             </div>
           </Container>
