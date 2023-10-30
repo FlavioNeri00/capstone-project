@@ -8,14 +8,18 @@ import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "..";
 import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { loadersFalseAction } from "../Redux/action";
 
 const Menu = () => {
   const [cafe, setCafe] = useState([]);
-
+  const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
+  const Selector = useSelector((state) => state.loaders.content);
   const params = useParams();
   const myCategory = params.category;
 
-  async function PizzaAction() {
+  async function cafeAction() {
     let cafeList = [];
     const cafeColl = collection(db, myCategory);
     const cafeDoc = await getDocs(cafeColl);
@@ -29,8 +33,12 @@ const Menu = () => {
 
     setCafe(cafeList);
   }
+
   useEffect(() => {
-    PizzaAction();
+    cafeAction();
+    if (cafeAction) {
+      setLoading(false);
+    }
   }, []);
 
   return (
@@ -42,7 +50,7 @@ const Menu = () => {
 
         <Row>
           {cafe.map((food) => (
-            <SingleMenu key={food.ID} food={food} />
+            <SingleMenu key={food.ID} food={food} loading={loading} />
           ))}
         </Row>
       </Container>

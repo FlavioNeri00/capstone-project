@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Badge, Button, Card, Col, Modal } from "react-bootstrap";
 
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { addToLibraryAction, removeFromLibraryAction } from "../Redux/action";
 
 const SingleBook = ({ book }) => {
   const [show, setShow] = useState(false);
@@ -19,6 +20,8 @@ const SingleBook = ({ book }) => {
 
   const [isAvailable, setIsAvailable] = useState(true);
   const userSelector = useSelector((state) => state.login.content);
+  const selectorBook = useSelector((state) => state.book.content);
+  console.log(selectorBook);
 
   const date = new Date(Date.now() + 12096e5);
   const dateBook = `${date.getDate()}/${
@@ -28,6 +31,8 @@ const SingleBook = ({ book }) => {
   const bookingBook = () => {
     setIsAvailable(!isAvailable);
   };
+
+  const dispatch = useDispatch();
 
   const navigate = useNavigate();
   return (
@@ -103,6 +108,7 @@ const SingleBook = ({ book }) => {
                   onClick={() => {
                     bookingBook();
                     handleShowBorrow();
+                    dispatch(addToLibraryAction(book));
                   }}
                 >
                   <span>Prenota</span>
@@ -114,6 +120,7 @@ const SingleBook = ({ book }) => {
                   onClick={() => {
                     bookingBook();
                     handleShowReturn();
+                    dispatch(removeFromLibraryAction(book));
                   }}
                 >
                   <span>Restituisci</span>

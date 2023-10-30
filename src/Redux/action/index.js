@@ -5,6 +5,9 @@ export const EXIT_LOGIN = "EXIT_LOGIN";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 export const ADD_TO_TOTAL = "ADD_TO_TOTAL";
 export const LESS_TO_TOTAL = "LESS_TO_TOTAL";
+export const LOADERS_OFF = "LOADERS_OFF";
+export const ADD_TO_LIBRARY = "ADD_TO_LIBRARY";
+export const REMOVE_FROM_LIBRARY = "LESS_TO_LIBRARY";
 
 export const addToCartAction = (food) => ({
   type: ADD_TO_CART,
@@ -39,4 +42,14 @@ export const addToTotal = (total) => ({
 export const lessToTotal = (total) => ({
   type: LESS_TO_TOTAL,
   payload: total,
+});
+
+export const addToLibraryAction = (food) => ({
+  type: ADD_TO_LIBRARY,
+  payload: food,
+});
+
+export const removeFromLibraryAction = (i) => ({
+  type: REMOVE_FROM_LIBRARY,
+  payload: i,
 });

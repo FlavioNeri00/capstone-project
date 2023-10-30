@@ -1,15 +1,18 @@
-import { Button } from "react-bootstrap";
+import { Button, Spinner } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addToCartAction,
   addToTotal,
   lessToCartAction,
   lessToTotal,
+  loadersFalseAction,
   removeFromCartAction,
 } from "../Redux/action";
+import { useEffect } from "react";
 
 const CartElements = ({ cart }) => {
   const cafeSelector = useSelector((state) => state.cafe.content);
+  // const loaderSelector = useSelector((state) => state.loaders.content);
   const find = cafeSelector.filter((i) => i.ID === cart.ID);
 
   const dispatch = useDispatch();
@@ -53,6 +56,7 @@ const CartElements = ({ cart }) => {
   };
   return (
     <div>
+      (
       <div
         className="d-flex flex-column flex-sm-row  my-5 align-items-center align-items-md-start"
         style={{

@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CartElements from "./CartElements";
 import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
@@ -14,10 +14,12 @@ const AllCartElements = () => {
         <div>
           <Container>
             {[...cafeSelector]
+
               .sort((a, b) => (a.id > b.id ? 1 : -1))
               .map((cart) => (
                 <CartElements key={cart.ID} cart={cart} />
               ))}
+
             <div className="text-end mb-5 font-lato ">
               {" "}
               <span style={{ fontSize: "30px", color: "#F4E7DB" }}>

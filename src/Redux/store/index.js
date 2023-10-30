@@ -6,11 +6,15 @@ import persistStore from "redux-persist/es/persistStore";
 import cafeReducer from "../reducers/cafeReducer";
 import loginReducer from "../reducers/loginReducer";
 import totalReducer from "../reducers/totalReducer";
+import loadersReducer from "../reducers/loadersReducer";
+import libraryReducer from "../reducers/libraryReducer";
 
 const rootReducer = combineReducers({
   cafe: cafeReducer,
   login: loginReducer,
   total: totalReducer,
+
+  book: libraryReducer,
 });
 
 const persistedReducer = persistReducer({ key: "root", storage }, rootReducer);
