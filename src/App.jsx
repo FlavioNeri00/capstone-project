@@ -13,7 +13,7 @@ import BookList from "./Components/BookList";
 
 import Market from "./Components/Market";
 import MarketEvents from "./Components/MarketEvents";
-import CartElements from "./Components/CartElements";
+
 import AllCartElements from "./Components/AllCartElements";
 import LoginPage from "./Components/LoginPage";
 

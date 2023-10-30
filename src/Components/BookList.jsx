@@ -13,7 +13,6 @@ const BookList = () => {
   const [books, setBooks] = useState([]);
   const userSelector = useSelector((state) => state.login.content);
 
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   async function BooksAction() {
@@ -35,7 +34,7 @@ const BookList = () => {
   }, []);
 
   const placeholder = `Cerca tra i nostri ${books.length} libri`;
-
+  const navigate = useNavigate();
   const handleSearch = (e) => {
     e.preventDefault();
     const searchLowerCase = e.target.value.toLowerCase();
@@ -73,6 +72,16 @@ const BookList = () => {
                 onClick={() => dispatch(exitLoginAction(""))}
               >
                 Esci dal tuo profilo
+              </h6>
+              <h6
+                style={{
+                  textDecoration: "underline",
+                  color: "#F4E7DB",
+                  cursor: "pointer",
+                }}
+                onClick={() => navigate("/community/books/your-book")}
+              >
+                La tua lista di libri
               </h6>
             </>
           ) : (

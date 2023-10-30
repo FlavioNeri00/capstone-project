@@ -20,8 +20,6 @@ const SingleBook = ({ book }) => {
 
   const [isAvailable, setIsAvailable] = useState(true);
   const userSelector = useSelector((state) => state.login.content);
-  const selectorBook = useSelector((state) => state.book.content);
-  console.log(selectorBook);
 
   const date = new Date(Date.now() + 12096e5);
   const dateBook = `${date.getDate()}/${
@@ -31,8 +29,6 @@ const SingleBook = ({ book }) => {
   const bookingBook = () => {
     setIsAvailable(!isAvailable);
   };
-
-  const dispatch = useDispatch();
 
   const navigate = useNavigate();
   return (
@@ -108,7 +104,6 @@ const SingleBook = ({ book }) => {
                   onClick={() => {
                     bookingBook();
                     handleShowBorrow();
-                    dispatch(addToLibraryAction(book));
                   }}
                 >
                   <span>Prenota</span>
@@ -120,7 +115,6 @@ const SingleBook = ({ book }) => {
                   onClick={() => {
                     bookingBook();
                     handleShowReturn();
-                    dispatch(removeFromLibraryAction(book));
                   }}
                 >
                   <span>Restituisci</span>
