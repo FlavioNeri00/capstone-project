@@ -22,6 +22,7 @@ const SingleMenu = ({ food, loading }) => {
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
   const cafeSelector = useSelector((state) => state.cafe.content);
+  console.log(cafeSelector)
   // const loaderSelector = useSelector((state) => state.loaders.content);
   const find = cafeSelector.filter((i) => i.ID === food.ID);
   console.log(loading);

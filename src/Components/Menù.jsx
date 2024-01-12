@@ -14,8 +14,7 @@ import { loadersFalseAction } from "../Redux/action";
 const Menu = () => {
   const [cafe, setCafe] = useState([]);
   const [loading, setLoading] = useState(true);
-  const dispatch = useDispatch();
-  const Selector = useSelector((state) => state.loaders.content);
+  
   const params = useParams();
   const myCategory = params.category;
 
